@@ -87,3 +87,4 @@ cron.schedule("*/2 * * * *", () => {
 });
 
 sendNews();
+setInterval(() => { }, 1 << 30);
