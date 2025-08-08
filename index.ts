@@ -77,7 +77,7 @@ async function sendNews() {
     }
 }
 
-cron.schedule("*/2 * * * *", () => {
+cron.schedule("*/10 * * * *", () => {
     console.log("⏰ Cron: Checking for new news...");
     sendNews();
 });
