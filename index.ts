@@ -11,6 +11,9 @@ const TELEGRAM_BOT_TOKEN = process.env.TOKEN!;
 const CHAT_ID = process.env.CHAT!;
 const REDIS_URI = process.env.REDIS_URI!;
 
+console.log("TOKEN from env:", JSON.stringify(TELEGRAM_BOT_TOKEN));
+console.log("CHAT from env:", JSON.stringify(CHAT_ID));
+
 const redis: RedisClientType = createClient({ url: REDIS_URI });
 redis.on("error", (err) => console.error("🧨 Redis Error:", err));
 
