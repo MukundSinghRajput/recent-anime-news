@@ -73,7 +73,11 @@ async function sendNews() {
         await redis.set("last_sent_news_link", link);
         console.log("✅ News sent:", title);
     } catch (error: any) {
-        console.error("❌ Error sending news:", error.message || error);
+        if (error.response) {
+            console.error("❌ Telegram API error:", error.response.data);
+        } else {
+            console.error("❌ Error sending news:", error.message || error);
+        }
     }
 }
 
